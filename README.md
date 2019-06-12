@@ -1,17 +1,17 @@
 # Student Resources
 
-## General Assembly San Francisco JavaScript Development 14
+## General Assembly San Francisco JavaScript Development 15
 
-- Monday, February 11 - Monday, April 22
+- Monday, June 10 - Wednesday, August 14
 
 ---
 
 ## Useful links
 
-- [JSD14 class website](https://pages.git.generalassemb.ly/vodnik/JSD14/)
-- [JSD14 homework repository](https://git.generalassemb.ly/vodnik/JS-SF-14-homework)
-- [Exit ticket](https://goo.gl/forms/yX2n1jBZ0k6SnTfY2)
-- [Snack signup](https://codesnacks.youcanbook.me)
+- [JSD15 class website](https://pages.git.generalassemb.ly/vodnik/JSD15/)
+- [JSD15 homework repository](https://git.generalassemb.ly/vodnik/JS-SF-15-homework)
+- [Exit ticket](https://forms.gle/tdzBxJdV6cDdqUoDA)
+- [Snack signup](https://jsdsnacks.youcanbook.me)
 
 ---
 
@@ -30,7 +30,7 @@ To use:
 
 1. Copy the following calendar link:
 
-   `webcal://p53-calendars.icloud.com/published/2/MTczMzg5NzU4MTczMzg5N75E2T9mKOEzU8UfcEp6z_LeGiOTSYv9WI4NKWwo8CZ-jeNBZPZZH7YldtMuIz25r2Eapf7okcSB73Of4BAgyKM`
+   `webcal://p53-calendars.icloud.com/published/2/MTczMzg5NzU4MTczMzg5N75E2T9mKOEzU8UfcEp6z_KIXigdnMhf6YkyQXU4nwXPObQkjwUODk8W7NmtdoFB7y0lgJfgpq1axokjr7llJkg`
 
 2) In your calendar program, select the option to subscribe to a calendar, then paste the copied link as the calendar to subscribe to.
    - Google Calendar: `Other Calendars` (sidebar) > `Add by URL`
