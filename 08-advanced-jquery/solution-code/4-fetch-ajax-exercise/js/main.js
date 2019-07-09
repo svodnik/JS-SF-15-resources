@@ -23,34 +23,37 @@ logged to the console after a user clicks the button.
 
 // Create a Fetch request and specify a function to call when we have a response
 // Include a parameter for the function so we can work with the response object
-fetch('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD').then(function(response) {
-  if (response.ok) {
-    // If our request was successful, we get a value of true for the ok property of our response object
-    // This is where we update our UI based on the response data
-    return response.json();
-  } else {
-    // If the ok property of our response is false, there was an error or other problem with our request
-    // BONUS 1: statusText property of response object logged instead of generic error message
-    console.log(response.statusText);
-  }
-}).then(function(data) {
-  console.log(data);
-});
-
-
-// BONUS 2:
-
-/* document.querySelector("#getDataButton").addEventListener('click', function() {
-  fetch('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD').then(function(response) {
+fetch('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD')
+  .then((response) => {
     if (response.ok) {
       // If our request was successful, we get a value of true for the ok property of our response object
       // This is where we update our UI based on the response data
       return response.json();
     } else {
       // If the ok property of our response is false, there was an error or other problem with our request
+      // BONUS 1: statusText property of response object logged instead of generic error message
       console.log(response.statusText);
     }
-  }).then(function(data) {
+  }).then((data) => {
     console.log(data);
-  });
-}, false); */
+});
+
+
+// BONUS 2:
+
+/* document.querySelector("#getDataButton").addEventListener('click', () => {
+  fetch('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD')
+    .then(function(response) {
+      if (response.ok) {
+      // If our request was successful, we get a value of true for the ok property of our response object
+      // This is where we update our UI based on the response data
+      return response.json();
+      } else {
+      // If the ok property of our response is false, there was an error or other problem with our request
+      console.log      (response.statusText);
+      }
+    })
+    .then(function(data) {
+      console.log(data);
+    });
+}); */

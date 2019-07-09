@@ -1,5 +1,5 @@
-/*$.get("https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD", function(r) {
-    var s = JSON.stringify(r);
+/*$.get("https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD", (r) => {
+    let s = JSON.stringify(r);
     console.log(s);
 });*/
 
@@ -8,7 +8,7 @@ $.ajax({
     data: {
         format: "json"
     },
-    success: function (response) {
+    success: (response) => {
         console.log(response);
     }
 })

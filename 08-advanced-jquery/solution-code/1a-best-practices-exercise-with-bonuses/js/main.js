@@ -3,13 +3,13 @@
 Improving a favorites list
 
 */
-$(function() {
+$(() => {
   const $thingList = $('#fav-list');
   const $things = $('.fav-thing');
   const $button = $('#new-thing-button');
   const $newThingInput = $('#new-thing');
 
-  function addToList($list, thing) {
+  const addToList = ($list, thing) => {
     // 1. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using chaining.
     // Start of code to replace
@@ -27,7 +27,7 @@ $(function() {
     $list.append($thingLi);
   }
 
-  function addCrossOffLink($li) {
+  const addCrossOffLink = ($li) => {
     // 2. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using chaining.
     // Start of code to replace
@@ -44,7 +44,7 @@ $(function() {
     // 3. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using implicit iteration.
     // Start of code to replace
-    // $li.each(function() {
+    // $li.each(() => {
     //   $(this).append($crossOffLink);
     // });
     // End of code to replace
@@ -53,11 +53,11 @@ $(function() {
     $li.append($crossOffLink);
   }
 
-  $things.toArray().forEach(function(li) {
+  $things.toArray().forEach((li) => {
     addCrossOffLink($(li));
   });
 
-  $button.on('click', function(event) {
+  $button.on('click', (event) => {
     event.preventDefault();
     const newThing = $newThingInput.val();
     if (newThing === '') {
@@ -75,8 +75,8 @@ $(function() {
   //      elements to which the event is delegated.
 
   // Start of code to update
-  //  $crossOffLink.on('click', function(event) {
-  $thingList.on('click', '.cross-off', function(event) {
+  //  $crossOffLink.on('click', (event) => {
+  $thingList.on('click', '.cross-off', (event) => {
     // updated
     $(this)
       .parent()
@@ -91,13 +91,13 @@ $(function() {
   // BONUS 2: Add another link after each item that allows you to delete the item.
 
   // Bonus 2 -- could also be further refactored by combining with preceding event listener
-  $thingList.on('click', '.fav-thing .delete', function() {
+  $thingList.on('click', '.fav-thing .delete', () => {
     const $thingItem = $(this).parent();
     $thingItem.addClass('deleted');
   });
 
   // Bonus 1
-  $thingList.on('mouseenter mouseleave', 'li', function(event) {
+  $thingList.on('mouseenter mouseleave', 'li', (event) => {
     if (event.type === 'mouseenter') {
       $(this).removeClass('inactive');
       $(this)

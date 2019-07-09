@@ -2,67 +2,65 @@
 
 // Code for Fetch request to the first URL
 /* 
-document.querySelector("#getFinanceDataButton").addEventListener('click', function() {
+document.querySelector("#getFinanceDataButton").addEventListener('click', () => {
   console.log('Making request');
   fetch('http://data.consumerfinance.gov/api/views.json')
-    .then(function(response) {
+    .then((response) => {
       if (response.ok) {
           return response.json();
       } else {
           console.log(response.statusText);
       }
     })
-    .then(function(data) {
+    .then((data) => {
       console.log(data);
     });
-}, false);
+});
 
 // Code for Fetch request to the second URL
 
-document.querySelector("#getHealthDataButton").addEventListener('click', function() {
+document.querySelector("#getHealthDataButton").addEventListener('click', () => {
   console.log('Making request');
   fetch('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD')
-    .then(function(response) {
+    .then((response) => {
       if (response.ok) {
           return response.json();
       } else {
           console.log(response.statusText);
       }
-    }).then(function(data) {
+    }).then((data) => {
       console.log(data);
     });
-}, false);
+});
  */
 
 document.querySelector('#getFinanceDataButton').addEventListener(
   'click',
-  function() {
+  () => {
     makeRequest('http://data.consumerfinance.gov/api/views.json');
-  },
-  false
+  }
 );
 
 document.querySelector('#getHealthDataButton').addEventListener(
   'click',
-  function() {
+  () => {
     makeRequest(
       'https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD'
     );
-  },
-  false
+  }
 );
 
-function makeRequest(url) {
+const makeRequest = (url) => {
   console.log('Making request');
   fetch(url)
-    .then(function(response) {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
         console.log(response.statusText);
       }
     })
-    .then(function(data) {
+    .then((data) => {
       console.log(data);
     });
 }

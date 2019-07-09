@@ -1,4 +1,4 @@
-function addToList($list, thing) {
+const addToList = ($list, thing) => {
   const $thingLi = $('<li>')
     .html(thing)
     .addClass('fav-thing list-group-item');
@@ -6,24 +6,24 @@ function addToList($list, thing) {
   $list.append($thingLi);
 }
 
-function addCrossOffLink($li) {
+const addCrossOffLink = ($li) => {
   const $crossOffLink = $('<span>')
     .html(' cross off')
     .addClass('cross-off');
   $li.append($crossOffLink);
 }
 
-$(function() {
+$(() => {
   const $thingList = $('#fav-list');
   const $things = $('.fav-thing');
   const $button = $('#new-thing-button');
   const $newThingInput = $('#new-thing');
 
-  $things.toArray().forEach(function(li) {
+  $things.toArray().forEach((li) => {
     addCrossOffLink($(li));
   });
 
-  $button.on('click', function(event) {
+  $button.on('click', (event) => {
     event.preventDefault();
     const newThing = $newThingInput.val();
     if (newThing === '') {
@@ -34,7 +34,7 @@ $(function() {
     }
   });
 
-  $thingList.on('click', '.fav-thing .cross-off', function() {
+  $thingList.on('click', '.fav-thing .cross-off', () => {
     const $thingItem = $(this).parent();
     $thingItem.addClass('crossed-off');
     $(this).html('');
@@ -42,17 +42,17 @@ $(function() {
 
   // Refactor the following two event listeners into a single event listener for multiple events.
   /*
-  $thingList.on('mouseenter', 'li', function(event) {
+  $thingList.on('mouseenter', 'li', (event) => {
     $(this).removeClass('inactive');
     $(this).siblings().addClass('inactive');
   });
 
-  $thingList.on('mouseleave', 'li', function(event) {
+  $thingList.on('mouseleave', 'li', (event) => {
     $(this).siblings().removeClass('inactive');
   });
 */
 
-  $thingList.on('mouseenter mouseleave', 'li', function(event) {
+  $thingList.on('mouseenter mouseleave', 'li', (event) => {
     if (event.type === 'mouseenter') {
       $(this).removeClass('inactive');
       $(this)

@@ -10,7 +10,7 @@ const images = {
   bear: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.png/1200px-Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.png'
 };
 
-$(function() {
+$(() => {
   const $gallery = $('.gallery');
   const $buttons = $('#animalsList li');
   const $images = $('.image');
@@ -18,7 +18,7 @@ $(function() {
 // implicit iteration
 //  $buttons.each(function() {
 //    $(this).on('click', function(event) {
-    $buttons.on('click', function(event) {
+    $buttons.on('click', (event) => {
       const animal = event.target.id;
       event.target.className = 'showing';
 // chaining
@@ -41,14 +41,14 @@ $(function() {
 
 // implicit iteration
 /* 
-//  $images.each(function() {
-//    $(this).on('mouseenter', function(event) {
-    $images.on('mouseenter', function(event) {
+//  $images.each(() => {
+//    $(this).on('mouseenter', (event) => {
+    $images.on('mouseenter', (event) => {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');
     });
-//    $(this).on('mouseleave', function(event) {
-    $images.on('mouseleave', function(event) {
+//    $(this).on('mouseleave', (event) => {
+    $images.on('mouseleave', (event) => {
       $(this).removeClass('active');
     });
 //  }); 
@@ -57,26 +57,26 @@ $(function() {
 // event delegation
 /*
 // original first line without event delegation
-//    $images.on('mouseenter', function(event) {
+//    $images.on('mouseenter', (event) => {
 
 // rewritten first line with event delegation
-  $gallery.on('mouseenter', '.image', function(event) {
+  $gallery.on('mouseenter', '.image', (event) => {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
   });
 
 // original first line without event delegation
-//    $images.on('mouseleave', function(event) {
+//    $images.on('mouseleave', (event) => {
 
 // rewritten first line with event delegation
-  $gallery.on('mouseleave', '.image', function(event) {
+  $gallery.on('mouseleave', '.image', (event) => {
     $(this).removeClass('active');
   });
 //  }); 
 */
 
 // combining selectors
-  $gallery.on('mouseenter mouseleave', '.image', function(event) {
+  $gallery.on('mouseenter mouseleave', '.image', (event) => {
     if (event.type === 'mouseenter') {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');

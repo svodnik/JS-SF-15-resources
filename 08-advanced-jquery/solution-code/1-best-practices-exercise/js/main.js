@@ -3,13 +3,13 @@
 Improving a favorites list
 
 */
-$(function() {
+$(() => {
   const $thingList = $('#fav-list');
   const $things = $('.fav-thing');
   const $button = $('#new-thing-button');
   const $newThingInput = $('#new-thing');
 
-  function addToList($list, thing) {
+  const addToList = ($list, thing) => {
     // 1. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using chaining.
     // Start of code to replace
@@ -27,7 +27,7 @@ $(function() {
     $list.append($thingLi);
   }
 
-  function addCrossOffLink($li) {
+  const addCrossOffLink = ($li) => {
     // 2. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using chaining.
     // Start of code to replace
@@ -44,7 +44,7 @@ $(function() {
     // 3. Comment out the following three lines of code, then below them
     //    write a single statement to replace them, using implicit iteration.
     // Start of code to replace
-    // $li.each(function() {
+    // $li.each(() => {
     //   $(this).append($crossOffLink);
     // });
     // End of code to replace
@@ -57,7 +57,7 @@ $(function() {
     addCrossOffLink($(li));
   });
 
-  $button.on('click', function(event) {
+  $button.on('click', (event) => {
     event.preventDefault();
     const newThing = $newThingInput.val();
     if (newThing === '') {
@@ -76,7 +76,7 @@ $(function() {
 
   // Start of code to update
   //  $crossOffLink.on('click', function(event) {
-  $thingList.on('click', '.cross-off', function(event) {
+  $thingList.on('click', '.cross-off', (event) => {
     // updated
     $(this)
       .parent()
